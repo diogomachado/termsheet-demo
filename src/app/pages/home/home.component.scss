@@ -1,0 +1,17 @@
+@import "../../../variables";
+
+header {
+  padding: 0.5rem 1rem;
+  text-align: center;
+  border-bottom: 1px $color-line solid;
+}
+
+.logo {
+  width: 150px;
+}
+
+.controls {
+  text-align: right;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}

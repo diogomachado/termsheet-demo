@@ -1,0 +1,12 @@
+@import "../../../variables";
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  td {
+    text-align: center;
+    padding: 1rem 0;
+    border: 1px $color-line solid;
+  }
+}

@@ -1,0 +1,34 @@
+<h2 mat-dialog-title>New deal</h2>
+<mat-dialog-content class="mat-typography">
+
+  <div class="grid-dialog">
+    <mat-form-field matForm appearance="standard">
+      <mat-label>Company name</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <mat-form-field matForm appearance="standard">
+      <mat-label>Purchase Price ($)</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <mat-form-field matForm appearance="standard">
+      <mat-label>Address</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <mat-form-field matForm appearance="standard">
+      <mat-label>NOI (Net Operating Income) ($)</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <mat-form-field matForm appearance="standard">
+      <mat-label>Cap Rate = NOI / Purchase Price (%)</mat-label>
+      <input matInput>
+    </mat-form-field>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Add</button>
+</mat-dialog-actions>

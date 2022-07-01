@@ -1,0 +1,13 @@
+<header>
+  <img
+    class="logo"
+    src="https://termsheet.com/wp-content/uploads/2021/03/cropped-logo-orange-black-2.png"
+    alt="logo"
+  />
+</header>
+<div class="controls">
+  <button mat-button color="accent" (click)="add()"><mat-icon>add</mat-icon> Add deal</button>
+</div>
+<div class="table-wrapper">
+  <app-table-custom [deals]="dealsData"></app-table-custom>
+</div>
