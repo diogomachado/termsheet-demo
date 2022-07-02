@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dialog-add',
@@ -7,7 +8,26 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
   styleUrls: ['./dialog-add.component.scss'],
 })
 export class DialogAddComponent implements OnInit {
-  constructor() {}
+  formGroup: FormGroup;
+  name = new FormControl();
+
+  constructor(
+    public dialogRef: MatDialogRef<DialogAddComponent>,
+    private formBuilder: FormBuilder
+  ) {
+    this.formGroup = this.formBuilder.group({
+      name: new FormControl(),
+      price: new FormControl(),
+      address: new FormControl(),
+      noi: new FormControl(),
+      rate: new FormControl(),
+    });
+  }
 
   ngOnInit(): void {}
+
+  handleSubmit() {
+    // Close dialog
+    this.dialogRef.close(this.formGroup.value);
+  }
 }

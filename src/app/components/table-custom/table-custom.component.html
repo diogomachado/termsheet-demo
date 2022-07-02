@@ -1,4 +1,4 @@
-<table>
+<table class="table-custom">
   <thead>
     <tr>
       <th>Deal Name</th>
@@ -12,9 +12,9 @@
     <!-- *ngFor of data -->
     <tr *ngFor="let deal of deals">
       <td>{{ deal.name }}</td>
-      <td>{{ deal.price }}</td>
+      <td>{{ deal.price | currency }}</td>
       <td>{{ deal.adress }}</td>
-      <td>{{ deal.noi }}</td>
+      <td>{{ deal.noi | currency }}</td>
       <td>{{ deal.rate }}</td>
     </tr>
   </tbody>

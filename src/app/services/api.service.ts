@@ -18,7 +18,6 @@ export class ApiService {
         rate: faker.finance.amount(5, 10, 0),
       });
     }
-    console.log(this.deals);
   }
 
   getDeals() {

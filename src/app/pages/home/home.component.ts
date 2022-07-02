@@ -31,18 +31,17 @@ export class HomeComponent implements OnInit {
       minWidth: '500px',
     });
     dialogRef.afterClosed().subscribe((result) => {
-      // Fake added
-      this.dealsData.push({
-        name: 'Company name',
-        adress: 'New York City, 28, Streets B',
-        price: 213213123,
-        noi: '2213123',
-        rate: '23',
-      });
+      if (result) {
+        this.dealsData.push({
+          name: result?.name,
+          adress: result?.adress,
+          price: result?.price,
+          noi: result?.noi,
+          rate: result?.rate,
+        });
 
-      // TODO: add in the list
-      console.log(`Dialog result: ${result}`);
-      this.snackBar.open('New deal added with success', 'Close');
+        this.snackBar.open('New deal added with success', 'Close');
+      }
     });
   }
 }
