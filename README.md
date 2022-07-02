@@ -23,3 +23,9 @@ npm i
 ```
 ng serve
 ```
+
+## Improvements
+
+- Custom material design with the colors of the company
+- Add more tests
+- Add more support for responsive design
