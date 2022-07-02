@@ -1,11 +1,8 @@
 /// <reference types="cypress" />
+import { faker } from "@faker-js/faker";
 
 describe("termsheet beta tests", () => {
   beforeEach(() => {
-    // Cypress starts out with a blank slate for each test
-    // so we must tell it to visit our website with the `cy.visit()` command.
-    // Since we want to visit the same URL at the start of all our tests,
-    // we include it in our beforeEach function so that it runs before each test
     cy.visit("http://localhost:4200");
   });
 
@@ -15,20 +12,26 @@ describe("termsheet beta tests", () => {
   });
 
   it("should add a new deal", () => {
+    cy.wait(3500);
+
     cy.get("#btn-add").click({
       force: true,
     });
 
-    cy.get("#form-name").type("Company 1");
-    cy.get("#form-price").type(3412313);
-    cy.get("#form-address").type("New York, Strees 24, Down Town");
-    cy.get("#form-noi").type("2133");
-    cy.get("#form-rate").type("12");
+    cy.get("#form-name").type(faker.company.companyName(), {
+      force: true,
+    });
+    cy.get("#form-price").type(parseInt(faker.finance.amount()));
+    cy.get("#form-address").type(faker.address.cityName());
+    cy.get("#form-noi").type(faker.finance.amount());
+    cy.get("#form-rate").type(faker.finance.amount(5, 10, 0));
 
     cy.wait(1000);
 
     cy.get("#btn-form-add").click({
       force: true,
     });
+
+    cy.get(".table-custom tbody tr").should("have.length", 11);
   });
 });
