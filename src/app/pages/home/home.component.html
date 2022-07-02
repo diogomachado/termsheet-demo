@@ -1,4 +1,4 @@
-<header>
+<header class="header">
   <img
     class="logo"
     src="https://termsheet.com/wp-content/uploads/2021/03/cropped-logo-orange-black-2.png"
@@ -9,5 +9,23 @@
   <button mat-button color="accent" (click)="add()"><mat-icon>add</mat-icon> Add deal</button>
 </div>
 <div class="table-wrapper">
-  <app-table-custom [deals]="dealsData"></app-table-custom>
+
+  <div class="placeholder-wrapper" *ngIf="isLoading">
+    <header class="row">
+      <div class="placeholder-item"></div>
+      <div class="placeholder-item"></div>
+      <div class="placeholder-item"></div>
+      <div class="placeholder-item"></div>
+      <div class="placeholder-item"></div>
+    </header>
+    <div class="row" *ngFor="let i of [0,1,2,3,4,5,6,7,8]">
+      <div class="placeholder-item"></div>
+      <div class="placeholder-item"></div>
+      <div class="placeholder-item"></div>
+      <div class="placeholder-item"></div>
+      <div class="placeholder-item"></div>
+    </div>
+  </div>
+
+  <app-table-custom *ngIf="!isLoading" [deals]="dealsData"></app-table-custom>
 </div>

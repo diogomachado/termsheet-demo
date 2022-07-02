@@ -11,6 +11,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  isLoading = true;
   dealsData: Deal[] = [];
   constructor(
     private apiService: ApiService,
@@ -19,7 +20,10 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.dealsData = this.apiService.getDeals();
+    setTimeout(() => {
+      this.isLoading = false;
+      this.dealsData = this.apiService.getDeals();
+    }, 3000);
   }
 
   add() {

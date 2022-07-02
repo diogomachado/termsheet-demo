@@ -1,6 +1,6 @@
 @import "../../../variables";
 
-header {
+.header {
   padding: 0.5rem 1rem;
   text-align: center;
   border-bottom: 1px $color-line solid;
@@ -14,4 +14,56 @@ header {
   text-align: right;
   padding: 1rem;
   margin-bottom: 1rem;
+}
+
+.placeholder-wrapper {
+  display: flex;
+  flex-direction: column;
+  opacity: 0.4;
+
+  .row {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 25px;
+  }
+
+  .placeholder-item {
+    display: inline-block;
+    min-width: 150px;
+    height: 20px;
+    background: rgb(56, 56, 56);
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0.5)
+    );
+    border-radius: 12px;
+    animation: bg-pan-left 2s infinite forwards;
+
+    &:nth-of-type(1),
+    &:nth-of-type(4),
+    &:nth-of-type(5) {
+      width: 250px;
+    }
+  }
+
+  header > .placeholder-item {
+    background: #4d4b4b;
+  }
+
+  div > .placeholder-item {
+    height: 35px;
+  }
+}
+
+@keyframes bg-pan-left {
+  0% {
+    background-position: -200px;
+  }
+  100% {
+    background-position: 200px;
+  }
 }
