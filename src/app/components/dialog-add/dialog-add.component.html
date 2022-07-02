@@ -9,7 +9,7 @@
 
       <mat-form-field matForm appearance="standard">
         <mat-label>Purchase Price ($)</mat-label>
-        <input id="form-price" matInput formControlName="price">
+        <input id="form-price" matInput type="number" formControlName="price">
       </mat-form-field>
 
       <mat-form-field matForm appearance="standard">
@@ -19,17 +19,17 @@
 
       <mat-form-field matForm appearance="standard">
         <mat-label>NOI (Net Operating Income) ($)</mat-label>
-        <input id="form-noi" matInput formControlName="noi">
+        <input id="form-noi" matInput type="number" formControlName="noi">
       </mat-form-field>
 
       <mat-form-field matForm appearance="standard">
         <mat-label>Cap Rate = NOI / Purchase Price (%)</mat-label>
-        <input id="form-rate" matInput formControlName="rate">
+        <input id="form-rate" matInput type="number" formControlName="rate">
       </mat-form-field>
     </div>
   </mat-dialog-content>
   <mat-dialog-actions align="end">
     <button id="btn-form-cancel" mat-button mat-dialog-close>Cancel</button>
-    <button id="btn-form-add" type="submit" mat-button cdkFocusInitial>Add</button>
+    <button id="btn-form-add" type="submit" [disabled]="formGroup.invalid" mat-button cdkFocusInitial>Add</button>
   </mat-dialog-actions>
 </form>

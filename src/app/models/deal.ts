@@ -1,7 +1,7 @@
 export interface Deal {
   name: string;
   price: number;
-  adress: string;
+  address: string;
   noi: string;
   rate: string;
 }

@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -16,11 +21,11 @@ export class DialogAddComponent implements OnInit {
     private formBuilder: FormBuilder
   ) {
     this.formGroup = this.formBuilder.group({
-      name: new FormControl(),
-      price: new FormControl(),
-      address: new FormControl(),
-      noi: new FormControl(),
-      rate: new FormControl(),
+      name: ['', Validators.required],
+      price: ['', Validators.required],
+      address: ['', Validators.required],
+      noi: ['', Validators.required],
+      rate: ['', Validators.required],
     });
   }
 

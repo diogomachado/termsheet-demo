@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
       if (result) {
         this.dealsData.push({
           name: result?.name,
-          adress: result?.adress,
+          address: result?.address,
           price: result?.price,
           noi: result?.noi,
           rate: result?.rate,

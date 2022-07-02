@@ -12,7 +12,7 @@ export class ApiService {
     for (let i = 0; i < 10; i++) {
       this.deals.push({
         name: faker.company.companyName(),
-        adress: faker.address.cityName(),
+        address: faker.address.cityName(),
         price: parseInt(faker.finance.amount()),
         noi: faker.finance.amount(),
         rate: faker.finance.amount(5, 10, 0),
